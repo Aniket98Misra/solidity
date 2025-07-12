@@ -16,7 +16,7 @@ return balances[msg.sender];
 }
 function Withdraw(uint amt) external{
 require(amt>0, "amt should be>0");
-if(amt<balances[msg.sender]){
+if(amt>balances[msg.sender]){
 revert Insufficientfunds(amt,balances[msg.sender]);
 }
 balances[msg.sender]-=amt;
