@@ -54,7 +54,7 @@ contract VotingSystem {
         emit VoterApproved(voter);
     }
 
-   e(uint256 proposalId) external onlyApproved {
+   function vote(uint256 proposalId) external onlyApproved {
         if (proposalId >= proposals.length) revert InvalidProposal();
 
         Proposal storage p = proposals[proposalId];
